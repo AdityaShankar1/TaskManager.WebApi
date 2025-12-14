@@ -40,13 +40,5 @@ TaskManagerApi/
  │    └── Dockerfile
  └── docker-compose.yml       # Compose file for backend+frontend+db
 
-## 📦 Setup
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/AdityaShankar1/TaskManager.WebApi
-cd TaskManagerApi
-
-```
-### Output Screenshot
+### 📷 Output Screenshot
 <img width="1470" height="956" alt="Screenshot 2025-12-15 at 12 00 58 AM" src="https://github.com/user-attachments/assets/38772c2c-f4d7-432b-854d-be11cda91783" />
