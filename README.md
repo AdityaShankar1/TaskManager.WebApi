@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Task Manager Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full‑stack task management application with:
+- ✅ ASP.NET Core backend (REST API)
+- ✅ React + Vite frontend with Chart.js dashboards
+- ✅ Dockerized deployment (backend, frontend, DB)
+- ⚡ PostgreSQL service included in Docker Compose (future persistence)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Add, toggle, and delete tasks
+- Manual priority assignment (1–3)
+- Dashboard with:
+  - Summary cards (Total, Completed, Pending, Due Soon)
+  - Pie chart (Completed vs Pending)
+  - Bar chart (Tasks by Priority)
+- Docker Compose for one‑command startup
+- **Note:** Tasks are currently stored in memory. PostgreSQL container is included for future integration.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **Backend**: ASP.NET Core 8.0
+- **Frontend**: React + Vite + Chart.js
+- **Database**: PostgreSQL 15 (planned integration)
+- **Deployment**: Docker & Docker Compose
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Project Structure
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+##  Project Structure:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+TaskManagerApi/
+ ├── TaskManagerApi/          # ASP.NET Core backend
+ │    └── Dockerfile
+ ├── taskmanager-frontend/    # React frontend
+ │    └── Dockerfile
+ └── docker-compose.yml       # Compose file for backend+frontend+db
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Setup
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/AdityaShankar1/TaskManager.WebApi
+cd TaskManagerApi
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Output Screenshot
+<img width="1470" height="956" alt="Screenshot 2025-12-15 at 12 00 58 AM" src="https://github.com/user-attachments/assets/38772c2c-f4d7-432b-854d-be11cda91783" />
